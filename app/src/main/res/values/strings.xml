@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ZušTrio</string>
+    <string name="akordeon">Akordeon</string>
+    <string name="fletna">Příčná Flétna</string>
+    <string name="klavir">Klavír</string>
+    <string name="original">Originál</string>
+    <string name="pause_play">Přehrát nebo zastavit</string>
+    <string name="tempo">Tempo:</string>
+    <string name="tempoTemplate">120</string>
+    <string name="start_at">Začít na taktu:</string>
+    <string name="start_at_default">1</string>
+    <string name="open_pdf">PDF</string>
+</resources>

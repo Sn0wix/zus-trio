@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pause_play"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <CheckBox
+        android:id="@+id/akordeon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/akordeon"
+        app:layout_constraintBottom_toTopOf="@+id/pause_play_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintVertical_bias="0.147" />
+
+    <EditText
+        android:id="@+id/start_at"
+        android:layout_width="56dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:labelFor="@id/start_at_text"
+        android:text="@string/start_at_default"
+        app:layout_constraintBottom_toTopOf="@+id/pause_play_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/start_at_text"
+        app:layout_constraintTop_toBottomOf="@+id/original"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <CheckBox
+        android:id="@+id/fletna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fletna"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/akordeon"
+        app:layout_constraintTop_toBottomOf="@+id/akordeon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:onClick="onOriginalChecked"
+        android:text="@string/original"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/klavir"
+        app:layout_constraintTop_toBottomOf="@+id/klavir"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tempotText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempo"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tempo"
+        app:layout_constraintEnd_toStartOf="@+id/tempo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tempo"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/start_at_text"
+        android:layout_width="92dp"
+        android:layout_height="26dp"
+        android:text="@string/start_at"
+        app:layout_constraintBottom_toBottomOf="@+id/start_at"
+        app:layout_constraintEnd_toStartOf="@+id/pause_play_button"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/start_at"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <EditText
+        android:id="@+id/tempo"
+        android:layout_width="68dp"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:inputType="number"
+        android:labelFor="@id/tempotText"
+        android:text="@string/tempoTemplate"
+        app:layout_constraintBottom_toBottomOf="@+id/start_at"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toEndOf="@+id/start_at"
+        app:layout_constraintTop_toTopOf="@+id/start_at"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/klavir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/klavir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fletna"
+        app:layout_constraintTop_toBottomOf="@+id/fletna"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pause_play_button"
+        android:layout_width="147dp"
+        android:layout_height="109dp"
+        android:clickable="true"
+        android:contentDescription="@string/pause_play"
+        android:focusable="true"
+        android:foreground="@android:drawable/ic_media_play"
+        android:foregroundGravity="center_vertical|clip_vertical|center_horizontal|fill"
+        android:foregroundTint="@android:color/background_light"
+        android:foregroundTintMode="multiply"
+        android:onClick="pausePlayEvent"
+        android:visibility="visible"
+        app:backgroundTint="@color/dark_purple"
+        app:backgroundTintMode="screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintVertical_bias="0.874"
+        app:useCompatPadding="false" />
+
+    <Button
+        android:id="@+id/akordeon_pdf"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:onClick="openPdf"
+        android:text="@string/open_pdf"
+        app:layout_constraintBottom_toBottomOf="@+id/akordeon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toEndOf="@+id/akordeon"
+        app:layout_constraintTop_toTopOf="@+id/akordeon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/fletna_pdf"
+        android:layout_width="79dp"
+        android:layout_height="40dp"
+        android:onClick="openPdf"
+        android:text="@string/open_pdf"
+        app:layout_constraintBottom_toBottomOf="@+id/fletna"
+        app:layout_constraintEnd_toEndOf="@+id/akordeon_pdf"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fletna"
+        app:layout_constraintTop_toTopOf="@+id/akordeon_pdf"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/klavir_pdf"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:onClick="openPdf"
+        android:text="@string/open_pdf"
+        app:layout_constraintBottom_toTopOf="@+id/original"
+        app:layout_constraintEnd_toEndOf="@+id/fletna_pdf"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fletna"
+        app:layout_constraintTop_toBottomOf="@+id/fletna_pdf"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="364dp"
+        android:layout_height="111dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_min="wrap"
+        app:srcCompat="@drawable/hoist_sail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
